@@ -1,0 +1,258 @@
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,200,300,400);
+
+*, body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrap {
+  height: 100vh;
+  width: 100vw;
+}
+
+.box {
+  position: absolute;
+  width:  100%;
+  height: 100%;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg') center center no-repeat;
+  background-size: cover;
+  z-index: -11;
+  overflow-x: hidden;
+}
+
+.smoke {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  transform: translate3d(0, 0, 0) rotate(0.01deg);
+  width: 120%;
+  height: 120%;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png') center center no-repeat;
+  background-size: cover;
+  z-index: -10;
+  overflow-y: auto;
+  opacity: .1;
+  animation: smokebg 20s infinite alternate;
+}
+
+@keyframes smokebg {
+    0% {
+      opacity: 0.2;
+      transform: translate3d(0, 0, 0) rotate(0.01deg);
+    }
+    25% {
+      opacity: 0.5;
+      transform: translate3d(100px, 0, 0) rotate(0.01deg);
+    }
+    50% {
+      opacity: 0.8; /* Maximum opacity */
+      transform: translate3d(-75px, -55px, 0) rotate(0.01deg);
+    }
+    75% {
+      opacity: 0.5;
+      transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+    }
+    100% {
+      opacity: 0.1; /* Back to initial opacity */
+      transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+    }
+  }
+/* .container {
+    margin-top: 70px;
+} */
+.content{
+    z-index: 10;
+}
+
+.center-text p {
+    margin-top: 2rem;
+    font-size: 22px;
+    font-family: Franklin Gothic ;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.input-container {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 25%;
+    border: 2px dashed rgb(87, 87, 87);
+    z-index: 12;
+}
+
+.input-container h1{
+    margin-top:  0.5rem;
+    margin-bottom: 0.7rem;
+    color: rgb(12, 12, 12);
+    font-size: 1.8rem;
+    text-shadow: 5px 7px 8px hsl(0, 0%, 93%);
+    font-family: Franklin Gothic Medium ;
+    text-align: center;
+    height: 35px;
+}
+.input-container input{
+    margin-left: 5rem;
+    color: #dd0000;
+}
+
+
+.list-center-text {
+    color:  #000000;
+    font-family: Franklin Gothic;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+.list-center-text h2 {
+    padding: 5px;
+    font-size: 30px;
+}
+.no-file {
+    font-size: 22px;
+    color: steelblue;
+    font-family: Franklin Gothic;
+    text-align: center;
+}
+.file-details {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /* margin: 20px 0; */
+  margin: auto;
+  z-index: 12;
+}
+th, td {
+  text-align: center;
+  padding: 12px;
+}
+th {
+  
+  border-bottom: 2px dotted #d0d0d0;
+  border-top:    2px dotted #d0d0d0;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+td {
+  border-bottom: 1px solid #aaaaaa;
+}
+.view-link {
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    z-index: 10;
+}
+.delete-link {
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+/*  styles on hover */
+
+.upload-btn{
+    position: relative;
+    margin-top: 1rem;
+    border:none;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    width: 125px;
+    height: 40px;
+    z-index: 10;
+    background: #000000;
+    transition: transform 0.3s ease-in-out;
+ }
+ .upload-btn a{
+    position: relative ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-top: 1px solids rgba( 255, 255, 255,0.01);
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    z-index: 12;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.05s;
+    backdrop-filter: blur(15px);
+ }
+.upload-btn:hover a{
+    letter-spacing: 3px;
+}
+.upload-btn a::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width:  50%;
+   height: 100%;
+   background: linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+   transform: skewX(45deg) translateX(0);
+}
+.upload-btn:hover a::before{
+    transform: skewX(45deg) translateX(200%);
+}
+.upload-btn::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 0px;
+    background: rgb(22, 22, 22);
+
+}
+.upload-btn:hover::before{
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+.upload-btn::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 0px;
+    background: rgb(238, 232, 232);
+
+}
+.upload-btn:hover::after{
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+.upload-btn:active {
+    color: #000000;
+    scale: 1.02;
+    transform: translateY(-8px);
+}
+.upload-btn a:active {
+    font-size: 17px;
+    letter-spacing: 0px;
+    color: #000000;
+    font-weight: 500;
+}
