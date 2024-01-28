@@ -1,6 +1,6 @@
 /** ------------------ IMPORTING PACKAGE ------------------ **/
 const express = require('express');
-const port = 3001;
+const port = 8000;
 const app = express();
 const path = require('path');
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: true}));
 //accesing static files from assets folder
 app.use(express.static('./assets'));    
 
-//setting up view engine
+//setting up view enginenodemon 
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
